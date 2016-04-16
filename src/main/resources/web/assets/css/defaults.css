@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: helvetica;
+	font-size: 12px;
+}
+
+.menuButton {
+	
+	cursor: pointer;
+	font-size: 14px;
+	padding: 6px;
+	color : #707070;
+	display: inline;
+	
+}
+
+.menuButton_mouseOver {
+	
+	cursor: pointer;
+	background-color : #fbf5ee;
+	font-size: 14px;
+	padding: 6px;
+	color : #202020;
+	display: inline;
+	
+}
+
+.menuButton_selected {
+	
+	cursor: pointer;
+	background-color : #f5f2ee;
+	font-size: 14px;
+	padding: 6px;
+	color : #202020;
+	display: inline;
+	border-bottom: solid 1px #ddcccc;
+	
+}
