@@ -73,6 +73,7 @@ function ViewInvoicesPage(){
 	var rateCofins = document.getElementById("invoice_cofins");
 	var rateCsll = document.getElementById("invoice_csll");
 	var total = document.getElementById("invoice_total");
+	var block = document.getElementById("viewInvoiceTaxes");
 	
 	this.getDOMElement = function(){
 		return element;
@@ -81,7 +82,9 @@ function ViewInvoicesPage(){
 	
 	this.show = function(){
 		shell.setLoadingState(true);
+		self.selectRow(null);
 		host.innerHTML = "";
+
 		
 		shell.apiGet("/company", function(data){
 		
@@ -90,12 +93,12 @@ function ViewInvoicesPage(){
 			shell.apiGet("/invoices", function(data){
 				
 				var row;
-				
+				if (data!=null){
 				data.forEach(function(item){
 					row = new InvoiceRow(self, item);
 					host.appendChild(row.getDOMElement());
 				});
-				
+				}
 				shell.setLoadingState(false);
 			});
 			
@@ -120,8 +123,10 @@ function ViewInvoicesPage(){
 				ratePis.innerText = Format.toMoneyString(data.pis);
 				rateCsll.innerText = Format.toMoneyString(data.csll);
 				total.innerText = Format.toMoneyString(data.ir + data.cofins + data.pis + data.csll);
+				block.style.opacity = 1;
 			});
 		} else{
+			block.style.opacity = 0.1;
 			rateIr.innerText = "0,00";
 			rateCofins.innerText = "0,00";
 			ratePis.innerText = "0,00";

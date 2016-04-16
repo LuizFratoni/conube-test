@@ -139,7 +139,7 @@ function Shell(){
 		buttonBar.add(btn1);
 		
 		buttonBar.add(new MenuButton("Create Invoice", pgCreateInvoice));
-		buttonBar.add(new MenuButton("Configuration", pgConfig));
+		buttonBar.add(new MenuButton("Configuration (Admin Area)", pgConfig));
 		
 		self.selectMenu(btn1);
 

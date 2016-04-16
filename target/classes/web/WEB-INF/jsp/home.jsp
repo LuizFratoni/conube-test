@@ -31,7 +31,7 @@
     	
     	</div>
     		
-    	<div style="position: absolute; top: 0px; width: 200px; height: 170px; right: 20px;  border-radius: 8px; border: solid 1px #e0e0e0;">
+    	<div id="viewInvoiceTaxes" style="opacity: 0.1; position: absolute; top: 0px; width: 200px; height: 170px; right: 20px;  border-radius: 8px; border: solid 1px #e0e0e0;">
     		<div style="font-size: 12px; font-weight: bold; margin-top: 8px; margin-left: 8px; margin-bottom: 15px;">Withheld Taxes</div>
     		<div>
     			<div style="margin-left: 15px; width: 80px; line-height: 24px; vertical-align: middle; float: left;">IR:</div>
