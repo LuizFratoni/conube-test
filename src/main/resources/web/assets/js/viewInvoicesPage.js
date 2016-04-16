@@ -93,11 +93,12 @@ function ViewInvoicesPage(){
 			shell.apiGet("/invoices", function(data){
 				
 				var row;
-				if (data!=null){
-				data.forEach(function(item){
-					row = new InvoiceRow(self, item);
-					host.appendChild(row.getDOMElement());
-				});
+				if (data!=null && Array.isArray(data)){
+					
+					data.forEach(function(item){
+						row = new InvoiceRow(self, item);
+						host.appendChild(row.getDOMElement());
+					});
 				}
 				shell.setLoadingState(false);
 			});
